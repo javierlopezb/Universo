@@ -1,0 +1,15 @@
+LUNA 3D MEJORADO
+
+1. Abre la carpeta con Live Server o ejecuta un servidor local.
+2. Pulsa "Vista libre".
+3. El navegador intentará capturar el mouse automáticamente.
+4. Controles:
+   - WASD: moverse
+   - Mouse: mirar
+   - Espacio / Ctrl: subir y bajar
+   - Shift: acelerar
+   - E: abrir una estrella o isla enfocada
+   - ESC: salir de vista libre
+5. Si el navegador no captura el mouse al instante, haz un clic dentro del universo.
+
+Las estrellas de recuerdo ya no muestran textos gigantes. Al apuntarlas, aparece el título y se abren con clic o con E.

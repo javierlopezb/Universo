@@ -1,0 +1,18 @@
+ARREGLO DE OVERLAY Y AUDIO
+
+1. El canvas Three.js ahora es transparente y deja ver el fondo de la página.
+   Ya no debe aparecer el rectángulo negro alrededor de la escena.
+
+2. El reproductor ya no depende de asset-manifest.js para detectar la canción.
+
+3. Coloca el MP3 en esta ruta exacta:
+   assets/audio/cant-help-falling-in-love.mp3
+
+4. El nombre debe ser exactamente:
+   cant-help-falling-in-love.mp3
+
+5. Abre el proyecto con Live Server y luego presiona el botón de reproducir.
+   Los navegadores no permiten que una canción empiece sola sin interacción.
+
+6. Si cambias el nombre del MP3, cambia también esta línea en js/main.js:
+   archivo: "assets/audio/cant-help-falling-in-love.mp3"

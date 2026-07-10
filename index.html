@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b28" />
+  <title>Nuestro Universo</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="universe-bg" aria-hidden="true">
+    <span class="nebula nebula-a"></span>
+    <span class="nebula nebula-b"></span>
+    <span class="nebula nebula-c"></span>
+    <span class="starfield starfield-a"></span>
+    <span class="starfield starfield-b"></span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#inicio" data-section="inicio" aria-label="Ir al inicio">
+      <span>Nuestro</span>
+      <strong>♡ Universo</strong>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="top-nav" aria-label="Menu principal">
+      <button class="nav-link active" type="button" data-section="inicio">Inicio</button>
+      <button class="nav-link" type="button" data-section="historia">Nuestra Historia</button>
+      <button class="nav-link" type="button" data-section="galeria">Galería</button>
+      <button class="nav-link" type="button" data-section="cartas">Cartas</button>
+      <button class="nav-link" type="button" data-section="momentos">Momentos</button>
+      <button class="nav-link" type="button" data-section="sobre">Sobre Nosotros</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="soft-button for-you-button" type="button" id="openForYou">♡ Para ti</button>
+      <button class="round-button music-toggle" type="button" id="headerMusicButton" aria-label="Reproducir musica">♪</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section page-section active" id="inicio" data-section-panel="inicio" aria-label="Inicio">
+      <div class="scene-shell">
+        <canvas id="threeCanvas" class="three-canvas" aria-label="Universo 3D navegable"></canvas>
+
+        <div class="fallback-scene" id="fallbackScene" aria-hidden="true">
+          <div class="fallback-moon"></div>
+          <div class="fallback-message">Nuestro Universo</div>
+        </div>
+
+        <div class="moon-wrap" aria-hidden="true">
+          <div class="moon-visual">
+            <span class="moon-crater crater-a"></span>
+            <span class="moon-crater crater-b"></span>
+            <span class="moon-crater crater-c"></span>
+            <span class="moon-crater crater-d"></span>
+            <span class="moon-crater crater-e"></span>
+          </div>
+          <div class="moon-title">
+            <span>Recuerdos</span>
+          <strong>en las</strong>
+          <em>estrellas</em>
+          <small>— ♡ —</small>
+        </div>
+
+        </div>
+
+        <div class="cloud-layer" aria-hidden="true">
+          <span class="cloud cloud-left"></span>
+          <span class="cloud cloud-right"></span>
+          <span class="cloud cloud-bottom-a"></span>
+          <span class="cloud cloud-bottom-b"></span>
+          <span class="cloud cloud-moon"></span>
+        </div>
+
+        <div class="scene-title" aria-label="Recuerdos en las estrellas">
+          <span>Recuerdos en las estrellas</span>
+          <small>Cada brillo guarda un momento nuestro</small>
+        </div>
+
+        <div class="floating-islands-layer" id="floatingIslandsLayer" aria-hidden="true"></div>
+        <div class="memory-stars-layer" id="memoryStarsLayer"></div>
+
+        <div class="camera-controls" aria-label="Controles de camara">
+          <button type="button" class="round-button" id="resetCameraButton" aria-label="Centrar camara">⌂</button>
+          <button type="button" class="round-button" id="zoomInButton" aria-label="Acercar">+</button>
+          <button type="button" class="round-button" id="zoomOutButton" aria-label="Alejar">−</button>
+          <button type="button" class="round-button" id="freeViewButton" aria-label="Vista libre">∞</button>
+        </div>
+
+        <div class="hero-copy">
+          <p>Cada estrella guarda un momento, cada momento guarda un pedacito de nuestro universo.</p>
+        </div>
+
+        <div class="action-bar" aria-label="Acciones principales">
+          <button type="button" class="action-pill" id="exploreButton">
+            <span class="pill-icon">☽</span>
+            <span>
+              <strong>Explora nuestro universo</strong>
+              <small>Arrastra para moverte</small>
+            </span>
+          </button>
+          <button type="button" class="primary-pill" id="writeButton">&#9825; Escribe ac&aacute;</button>
+          <button type="button" class="action-pill" id="freeViewPill">
+            <span class="pill-icon">◎</span>
+            <span>
+              <strong>Vista libre</strong>
+              <small>Explora sin límites</small>
+            </span>
+          </button>
+        </div>
+        <div class="scene-toast" id="sceneToast" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="section-shortcuts" id="sectionShortcuts" aria-label="Secciones de la pagina"></div>
+    </section>
+
+    <section class="content-section page-section" id="historia" data-section-panel="historia">
+      <div class="section-heading">
+        <span>Nuestra Historia</span>
+        <h1>Dos almas, un destino.</h1>
+        <p>Cada paso, cada risa y cada lágrima nos trajo hasta aquí.</p>
+      </div>
+      <div class="timeline" id="historiaContainer"></div>
+    </section>
+
+    <section class="content-section page-section" id="galeria" data-section-panel="galeria">
+      <div class="section-heading">
+        <span>Galería</span>
+        <h1>Recuerdos en fotos.</h1>
+        <p>Instantes que brillan incluso cuando la noche está quieta.</p>
+      </div>
+      <div class="gallery-grid" id="galeriaContainer"></div>
+    </section>
+
+    <section class="content-section page-section" id="cartas" data-section-panel="cartas">
+      <div class="section-heading">
+        <span>Cartas</span>
+        <h1>Palabras para ti.</h1>
+        <p>Pequeños sobres con cosas que mi corazón siempre quiso decir.</p>
+      </div>
+      <div class="letters-grid" id="cartasContainer"></div>
+    </section>
+
+    <section class="content-section page-section" id="momentos" data-section-panel="momentos">
+      <div class="section-heading">
+        <span>Momentos</span>
+        <h1>Pequeños instantes, grandes recuerdos.</h1>
+        <p>Un carrusel de noches, promesas, abrazos y sueños compartidos.</p>
+      </div>
+      <div class="moments-shell">
+        <button class="round-button carousel-button" type="button" id="momentPrev" aria-label="Momento anterior">‹</button>
+        <div class="moments-track" id="momentosContainer"></div>
+        <button class="round-button carousel-button" type="button" id="momentNext" aria-label="Momento siguiente">›</button>
+      </div>
+    </section>
+
+    <section class="content-section page-section" id="sobre" data-section-panel="sobre">
+      <div class="section-heading">
+        <span>Sobre Nosotros</span>
+        <h1>Nuestro pequeño universo.</h1>
+        <p>Lo que somos, lo que guardamos y lo que seguimos soñando.</p>
+      </div>
+      <div class="about-grid" id="sobreContainer"></div>
+    </section>
+  </main>
+
+  <aside class="music-player" id="musicPlayer" aria-label="Reproductor de musica">
+    <div class="cover" id="musicCover"></div>
+    <div class="track-info">
+      <strong id="musicTitle">Canción</strong>
+      <span id="musicArtist">Artista</span>
+      <div class="player-progress">
+        <span id="currentTime">0:00</span>
+        <input id="progressRange" type="range" min="0" max="100" value="0" aria-label="Progreso" />
+        <span id="durationTime">0:00</span>
+      </div>
+      <p class="player-message" id="playerMessage" role="status"></p>
+    </div>
+    <div class="player-controls">
+      <button class="round-button" id="rewindButton" type="button" aria-label="Retroceder">‹</button>
+      <button class="round-button play-button" id="playPauseButton" type="button" aria-label="Reproducir">▶</button>
+      <button class="round-button" id="forwardButton" type="button" aria-label="Avanzar">›</button>
+      <input id="volumeRange" class="volume-range" type="range" min="0" max="1" value="0.7" step="0.01" aria-label="Volumen" />
+    </div>
+  </aside>
+
+  <nav class="mobile-bottom-nav" aria-label="Menu inferior movil">
+    <button type="button" class="mobile-nav-link active" data-section="inicio"><span>⌂</span>Inicio</button>
+    <button type="button" class="mobile-nav-link" data-section="historia"><span>♡</span>Historia</button>
+    <button type="button" class="mobile-nav-link" data-section="galeria"><span>▧</span>Galería</button>
+    <button type="button" class="mobile-nav-link" data-section="cartas"><span>✉</span>Cartas</button>
+    <button type="button" class="mobile-nav-link" data-section="momentos"><span>◉</span>Momentos</button>
+  </nav>
+
+  <div class="modal" id="generalModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">×</button>
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <span class="modal-kicker" id="modalKicker"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+        <small id="modalDate"></small>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal for-you-modal" id="forYouModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-for-you></div>
+    <article class="modal-card special-card">
+      <button class="modal-close" type="button" data-close-for-you aria-label="Cerrar">×</button>
+      <div class="heart-particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <span class="modal-kicker">Para ti</span>
+      <h2>En un universo lleno de estrellas, tú sigues siendo mi lugar favorito.</h2>
+      <p>Gracias por hacer que lo ordinario se sienta eterno, suave y lleno de luz.</p>
+      <button class="primary-pill" type="button" data-close-for-you>Guardar este momento</button>
+    </article>
+  </div>
+
+  <div class="modal write-modal" id="writeModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-write></div>
+    <article class="modal-card special-card write-card">
+      <button class="modal-close" type="button" data-close-write aria-label="Cerrar">&times;</button>
+      <span class="modal-kicker">Escribe ac&aacute;</span>
+      <h2>Guarda un mensaje en nuestro universo</h2>
+      <textarea id="loveMessageInput" rows="7" placeholder="Escribe aqu&iacute; lo que quieras guardar..."></textarea>
+      <div class="write-actions">
+        <button class="primary-pill" type="button" id="saveLoveMessage">Guardar mensaje</button>
+        <button class="soft-button" type="button" data-close-write>Cerrar</button>
+      </div>
+      <p class="saved-message" id="savedMessagePreview"></p>
+    </article>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.min.js"></script>
+  <script src="assets/asset-manifest.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
